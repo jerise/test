@@ -1,12 +1,21 @@
 const Discord = require('discord.js');
+const { Client, Util } = require('discord.js');
 const client = new Discord.Client();
-const chalk = require('chalk');
-const yt = require('ytdl-core');
-const request = require('request');
+const { PREFIX, GOOGLE_API_KEY } = require('./config');
+const prefix = 'K'
+const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
+const youtube = new YouTube(GOOGLE_API_KEY);
+const queue = new Map();
+const moment = require('moment');
+const fs = require("fs");
+const coolDown = new Set();
+const db = require('quick.db')
+const ms = require('ms')
+const bot = new Discord.Client();
 
-const config = require('./config.json');
 ///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-let ownerID = "411137717884289024";
+let ownerID = "448444251504640012";
 ///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
 let voiceChannel;
 let conn;///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
@@ -57,7 +66,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             if (args.length > 0) return;
             voiceChannel = message.member.voiceChannel;
             if (!voiceChannel) return message.channel.send(":x: You are not in a voice channel.");
-            if (voiceChannel.id !== config.channels.voice) return;
             toPlay = true;
             voiceChannel.join().then((c) => {
                 conn = c;
@@ -85,7 +93,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             if (args.length === 0) return;
             voiceChannel = message.member.voiceChannel;
             if (!voiceChannel) return message.channel.send(":x: You are not in a voice channel.");///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-            if (voiceChannel.id !== config.channels.voice) return;
             inVoiceChannel = client.voiceConnections.size > 0;
             let s = args[0];///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
             message.channel.send(":mag_right: Searching...").then(msg => {
