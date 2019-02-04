@@ -34,13 +34,11 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
     switch (command) {
 
         case "help":
-            if (message.channel.id !== config.channels.text) return;
             if (args.length > 0) return;
             message.channel.send(`**__Music Commands:__**\n\n**All users**\n\n\`${config.bot.prefix}join\`\n\`\`\`Summon the bot to your current voice channel.\`\`\`\n\n\`${config.bot.prefix}leave\`\n\`\`\`Remove the bot from the voice channel.\`\`\`\n\n\`${config.bot.prefix}play\`\n\`\`\`Request a song to be added to the playlist queue. The song specified can be a YouTube video URL or a song name.\`\`\`\n\n\`${config.bot.prefix}remove\` \`[song number]\`\n\`\`\`Remove a song that you have previously requested from the playlist queue, at the specified position. Note: Users with the mod/DJ role can remove any song, regardless of who requested it.\`\`\`\n\n\`${config.bot.prefix}song\`\n\`\`\`Display the song that is currently playing.\`\`\`\n\n\`${config.bot.prefix}queue\`\n\`\`\`Display the songs currently in the queue.\`\`\`\n\n**Try Administrator/الأدارة only**\n\n\`${config.bot.prefix}resume\`\n\`\`\`Resume music playback if it is currently paused.\`\`\`\n\n\`${config.bot.prefix}pause\`\n\`\`\`Pause music playback if it is currently playing.\`\`\`\n\n\`${config.bot.prefix}skip\`\n\`\`\`Skip the current song and start playing the next song in the queue.\`\`\`\n\n\`${config.bot.prefix}clear\`\n\`\`\`Clear the playlist queue.\`\`\``);
             break;
 ///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
         case "queue":///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-            if (message.channel.id !== config.channels.text) return;
             if (args.length > 0) return;
             if (playlist.length === 0) return message.channel.send(":x: There are currently no songs in the playlist.");
             let queueMsg = "";
@@ -55,7 +53,7 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             break;
 ///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
         case "join":///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-            if (message.channel.id !== config.channels.text) return;
+          
             if (args.length > 0) return;
             voiceChannel = message.member.voiceChannel;
             if (!voiceChannel) return message.channel.send(":x: You are not in a voice channel.");
@@ -68,7 +66,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             break;
 
         case "leave":///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-            if (message.channel.id !== config.channels.text) return;
             if (args.length > 0) return;
             inVoiceChannel = client.voiceConnections.size > 0;
             if (!inVoiceChannel) return message.channel.send(":x: I am not in a voice channel.");
@@ -85,7 +82,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             break;
 
         case "play":///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-            if (message.channel.id !== config.channels.text) return;
             if (args.length === 0) return;
             voiceChannel = message.member.voiceChannel;
             if (!voiceChannel) return message.channel.send(":x: You are not in a voice channel.");///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
@@ -158,7 +154,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             break;
 
         case "remove":
-            if (message.channel.id !== config.channels.text) return;
             let removeIndex;
             if (args.length === 0) removeIndex = playlist.length - 1;
             if (args.length === 1) removeIndex = Number(args[0]) - 1;
@@ -176,7 +171,6 @@ client.on('message', (message) => {///////////////////////By:- Mál ,ϻά𝔥�
             break;
 
         case "clear":
-            if (message.channel.id !== config.channels.text) return;
             if (args.length > 0) return;
             if (!hasPerms()) return message.channel.send(":no_entry_sign: You do not have permission to use this command.");
             playlist = [];
@@ -206,7 +200,6 @@ function play(message) {
         let cmd = m.content.slice(config.bot.prefix.length);
         switch (cmd) {
             case "pause":
-                if (m.channel.id !== config.channels.text) return;
                 if (!hasPerms()) return m.channel.send(":no_entry_sign: You do not have permission to use this command.");
                 if (playing) {///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
                     m.channel.send(":pause_button: Paused.").then(() => {
@@ -218,7 +211,6 @@ function play(message) {
                 break;
 
             case "resume":
-                if (m.channel.id !== config.channels.text) return;
                 if (!hasPerms()) return m.channel.send(":no_entry_sign: You do not have permission to use this command.");
                 if (!playing) {
                     m.channel.send(":arrow_forward: Resumed.").then(() => {
@@ -230,7 +222,6 @@ function play(message) {
                 break;
 
             case "skip":
-                if (m.channel.id !== config.channels.text) return;
                 if (!hasPerms()) return m.channel.send(":no_entry_sign: You do not have permission to use this command.");
                 m.channel.send(":track_next: Skipped.").then(() => {
                     dispatcher.end();
@@ -271,7 +262,7 @@ function play(message) {
     });
 }
 const adminprefix = "Prefix Here";///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
-const devs = ['411137717884289024', 'ID User Admin Bot 2'];
+const devs = ['448444251504640012', 'ID User Admin Bot 2'];
  
 ///////////////////////By:- Mál ,ϻά𝔥𝔪𝔬𝔲𝓓-QuaStyle≽ܫ≼#9115///// By:- Mál , Galal . 🚀#1381//////Mal Codes
 client.on('message', message => {
