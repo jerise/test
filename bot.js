@@ -102,7 +102,7 @@ client.on('message', async message => {
      category : 'Temporary Channels',
       channel : 'انشاء روم مؤقت'
        }
-        if(message.content.startsWith('-temp on')){
+        if(message.content.startsWith('!temp on')){
          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
           var ggg= message.guild.createChannel('Temporary Channels', 'category').then(cg => {
            var ccc =message.guild.createChannel('انشاء روم مؤقت', 'voice').then(ch => {
