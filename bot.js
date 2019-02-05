@@ -93,7 +93,7 @@ if (command == "h") {
 
 });
 
-const temp = {448444251504640012};
+const temp = {};
 client.on('message', async message => {
  if(message.channel.type === "dm") return;
   if(message.author.bot) return;
