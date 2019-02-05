@@ -93,7 +93,7 @@ if (command == "h") {
 
 });
 
-const temp = {};
+const temp = {448444251504640012};
 client.on('message', async message => {
  if(message.channel.type === "dm") return;
   if(message.author.bot) return;
@@ -102,14 +102,14 @@ client.on('message', async message => {
      category : 'Temporary Channels',
       channel : 'انشاء روم مؤقت'
        }
-        if(message.content.startsWith('!temp on')){
+        if(message.content.startsWith('temp on')){
          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
           var ggg= message.guild.createChannel('Temporary Channels', 'category').then(cg => {
            var ccc =message.guild.createChannel('انشاء روم مؤقت', 'voice').then(ch => {
             ch.setParent(cg)
              message.channel.send('**:white_check_mark:  تم تفعيل الخاصية بنجاح **')
               client.on('message' , message => {
-               if(message.content === '-temp off') {
+               if(message.content === 'temp off') {
                 if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
                  cg.delete()
                   ch.delete()
