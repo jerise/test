@@ -5,8 +5,32 @@ const client = new Discord.Client();
 const fs = require("fs");/////////////Mal Team
 const config = require("./config.json");/////////////Mal Team
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations :')
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log('╚[════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════]╗')
+  console.log(' Bot Is Online')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
+});
 
-/*/ Start of loading events /*//////////////Mal Team
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);/////////////Mal Team
   files.forEach(file => {
@@ -32,4 +56,7 @@ client.on("message", message => {
 /*/ End of loading commands /*//////////////Mal Team
 /////////////Mal Team
 /*/* Login as the bot. /*//////////////Mal Team
-client.login(config.token);//////////////Mal Team
+
+
+
+client.login(process.env.BOT_TOKEN);
