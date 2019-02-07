@@ -98,7 +98,7 @@ msg.delete();
 });
 
 client.on("message",async message => {
-if(message.content === 'shop'){//الامر
+if(message.content === 'shops'){//الامر
 let staff = message.guild.member(message.author).roles.find('name' ,"shop");
       if(!staff) return message.reply(`**Only Sellers | :x:**`)
 var shopc = message.guild.channels.find("name","shop")
