@@ -1654,22 +1654,6 @@ client.on('message', message => {
 
 //=================================== - [ Bot information ] - ===================================\\
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "own") {
-
-
- message.author.sendMessage(`
- 
- __~~Bot Staff~~__
-??
- __Powered By__: ROCKETMAN《CA》 #8511
-Server Support : https://discord.gg/n89cUeC
-
-message.channel.send('**تم الارسال في الخاص**');
-
-    }
-});
 
 
 
