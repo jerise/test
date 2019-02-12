@@ -2431,4 +2431,30 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 client.login(process.env.BOT_TOKEN);
