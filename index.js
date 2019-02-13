@@ -117,22 +117,4 @@ bot.on("ready", function () {
   	}, 100000)
 });
 
-// Command System
-bot.on('message', function (msg) {
-	if (msg.content.indexOf(config.prefix) === 0) {
-		console.log(`(${msg.guild.name}) ${msg.author.tag}: ${msg.content}`); // Command logger
-
-      		const command = msg.content.split(" ")[0].substring(config.prefix.length); // Command
-      		const suffix = msg.content.substring(command.length + config.prefix.length + 1); // Arguments
-      		const embed = new Discord.RichEmbed(); // Gets Rich Embed
-
-      		if (!commands[command]) return; // Return if the command doesn't exists
-      		try {
-			commands[command].process(msg, suffix, embed); // Execute the command
-      		} catch(err) { // Catch an error
-        		msg.channel.send({embed: {"description": "<:tick:445752370324832256> **Error:** ```\n" + err + "```", "color": 0xff0000}});
-      		}
-	}
-});
-
 bot.login(process.env.BOT_TOKEN); 
