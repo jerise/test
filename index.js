@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { Client, Util } = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'K'
+const prefix = '@'
 const queue = new Map();
 const bot = new Discord.Client();
 
