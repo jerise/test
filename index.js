@@ -71,4 +71,4 @@ client.on("message", message => {
 /*/ End of loading commands /*/
 
 /*/* Login as the bot. /*/
-client.login(config.token);
+client.login(process.env.BOT_TOKEN); 
