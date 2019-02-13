@@ -3,13 +3,8 @@ const { Client, Util } = require('discord.js');
 const client = new Discord.Client();
 const prefix = 'K'
 const queue = new Map();
-const moment = require('moment');
-const fs = require("fs");
-const coolDown = new Set();
 const db = require('quick.db')
-const ms = require('ms')
 const bot = new Discord.Client();
-const adminprefix = '@'
 
 
 client.on('ready', () => {
