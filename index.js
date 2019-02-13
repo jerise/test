@@ -1,6 +1,7 @@
 /*==========DISCORD.JS===========*/
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const { Client, Util } = require('discord.js');
 /*==============================*/
 const config = bot.config = require('./config.json'); // Global config file
 console.log("[!] Starting bot...");
