@@ -6,6 +6,13 @@ const config = bot.config = require('./config.json'); // Global config file
 console.log("[!] Starting bot...");
 /*==============================*/
 
+
+
+
+
+
+
+
 // Commands
 const commands = {
 	"help": {
@@ -110,4 +117,4 @@ bot.on('message', function (msg) {
 	}
 });
 
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN); 
