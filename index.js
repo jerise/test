@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const { Client, Util } = require('discord.js');
 const client = new Discord.Client();
 const prefix = 'K'
-const ytdl = require('ytdl-core');
 const queue = new Map();
 const moment = require('moment');
 const fs = require("fs");
