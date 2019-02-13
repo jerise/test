@@ -516,4 +516,4 @@ Do `help <number>` to select a category')
     });
 });
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN); 
