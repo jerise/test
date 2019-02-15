@@ -9,7 +9,6 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 const queue = new Map();
 const moment = require('moment');
 const fs = require("fs");
-const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
 const db = require('quick.db')
 const ms = require('ms')
