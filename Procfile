@@ -1,2 +1,1 @@
-worker: node animeradioclub.js
-
+worker: node bot.js
